@@ -2,14 +2,15 @@
 <h1>User info</h1>
 <p>name</p>
 <p>introduction</p>
-<%= link_to"編集icon" %>
+<%= link_to '', users_path, class:"glyphicon glyphicon-wrench" %>
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 </div>
 
 <div class="new">
 	<h1>New book</h1>
 	<p>title</p>
 	<p>Opinion</p>
-	<%= link_to"Create Book" %>
+	<%= link_to 'Create Book', users_path, class:"btn btn-primary" %>
 </div>
 
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

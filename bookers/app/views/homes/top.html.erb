@@ -1,26 +1,30 @@
-<header>
-	<div class="title1">
-	<div class="row">
-    <div class="col-sm-4" style="background-color:red;">Bookers</div>
-    <div class="col-sm-4" style="background-color:white;"></div>
-    <div class="col-sm-1" style="background-color:yellow;">Home</div>
-    <div class="col-sm-1" style="background-color:yellow;">About</div>
-    <div class="col-sm-1" style="background-color:yellow;">sign in</div>
-    <div class="col-sm-1" style="background-color:yellow;">login</div>
-</div>
-</div>
-</header>
-</table>
-</div>
-</div>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Bookers</a>
+    </div>
+    <ul class="nav navbar-nav">
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-link"></span>  About</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span>  sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>  login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
 
 
 <main>
-	<h1>welcom to Bookers !!</h1>
-	<h6>In Bookers,</h6>
+	<h1>welcom to<span class="glyphicon glyphicon-book">Bookers !!</h1>
+	<h6> In <span class="glyphicon glyphicon-book">Bookers,</h6>
 	<h6>you can share and exchange your opinions , inpressions , and emotions<br>
 	about various books!</h6>
-    
+    <button class="btn btn-danger navbar-btn">log in</button>
+
     <%= link_to "Log in" ,user_session_path %>
     <%= link_to "Sign Up" ,new_user_registration_path %>
 
@@ -28,8 +32,3 @@
 </main>
 
 
-
-<th>Home</th>
-<th>About</th>
-<th>sign up</th>
-<th>login</th>

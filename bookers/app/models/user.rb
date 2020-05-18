@@ -3,5 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-validates :name,    length: { in: 2..20 } 
+validates :name,    length: { maximum: 20, minimum: 2}
+validates :name,{presence: true}
+has_many :books, dependent: :destroy
 end

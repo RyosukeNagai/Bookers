@@ -8,8 +8,31 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
-  </body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <p>Bookers</p>
+    </div>
+    <ul class="nav navbar-nav">
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      <li><%= link_to ' Home', root_path, class:"glyphicon glyphicon-home" %></li>
+      <li><%= link_to ' Users', root_path, class:"glyphicon glyphicon-user" %></li>
+      <li><%= link_to ' Books', new_user_registration_path, class:"glyphicon glyphicon-book" %></li>
+      <li><%= link_to ' logout', destroy_user_session_path,method: :delete, class:"glyphicon glyphicon-log-out" %></li>
+      <% else %>
+      <li><%= link_to ' Home', root_path, class:"glyphicon glyphicon-home" %></li>
+      <li><%= link_to ' About', root_path, class:"glyphicon glyphicon-link" %></li>
+      <li><%= link_to ' sign Up', new_user_registration_path, class:"glyphicon glyphicon-user" %></li>
+      <li><%= link_to ' login', new_user_session_path, class:"glyphicon glyphicon-log-in" %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+<%= yield %>
+</body>
 </html>

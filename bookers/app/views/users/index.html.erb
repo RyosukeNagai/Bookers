@@ -8,16 +8,26 @@
 <%= render 'books/newbook', book: @book %>
 </div>
 
-<div class="col-lg-7">
 <h1>Users</h1>
 <table class="table table-hover table-inverse">
 <thead>
 	<tr>
-		<th> </th>
       <th>image</th>
       <th>name</th>
+      <th></th>
       <th colspan="3"></th>
-    </tr>
+  </tr>
 </thead>
-</div>
+<tbody>
+	<% @users.each do |user| %>
+    </tr>
+    	<td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", class: "image" %>
+    	</td>
+    	<td><%= user.name %></td>
+    </tr>
+    <% end %>
+</tbody>
 </table>
+
+
+

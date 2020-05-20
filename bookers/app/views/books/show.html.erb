@@ -3,10 +3,10 @@
 	<div class="row">
 		<div class="col-lg-3">
 <h1>User info</h1>
-<%= render 'users/information', user: @user %>
+<%= render 'users/information', user: @book.user %>
 
 <h1>New book</h1>
-<%= render 'books/newbook', book: @book %>
+<%= render 'books/newbook', book: @book_new %>
 </div>
 
 <div class="col-lg-7">
@@ -14,18 +14,24 @@
 <table class="table table-hover table-inverse">
 <thead>
 	<tr>
-		<th> </th>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
+	  <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="5"></th>
     </tr>
+    <tr>
+      <td></td>
+      <td><%= @book.title %> </td>
+      <td><%= @book.body %> </td>
+    </tr>
+
 </thead>
 </div>
 </table>
-<li>
-<%= link_to 'Edit',edit_book_path, class:"btn-sm btn-success" %>
-</li>
-<li>
 
-<%= link_to 'Destroy',book_path(@book),class:"btn-sm btn-danger", method: :delete %>
-</li>
+<tr><%= link_to 'Edit',edit_book_path, class:"btn-sm btn-success" %></tr>
+<tr><%= link_to 'Destroy',book_path(@book), method: :delete, class: "btn-sm btn-danger" %></tr>
+
+
+

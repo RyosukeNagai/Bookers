@@ -1,16 +1,20 @@
-<div class="user">
-	<h6>name</h6>
-	<p><%= user.name %></p>
-    <h6>introduction</h6>
-    <p><%= user.introduction %></p>
 
-<%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", class: "image" %>
+<table class="table">
+	<tr><%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", class: "image" %></tr>
+<tr>
+	<th>name</th>
+	<th><%= user.name %></th>
+</tr>
+<tr>
+    <th>introduction</th>
+    <th><%= user.introduction %></th>
 
-</div>
+</tr>
+</table>
 
-<div class="botan">
+<div class="row">
 	<%# if user == current_user %>
-    <%=link_to '', edit_user_path(id: user.id), class:"col-xs-2 glyphicon glyphicon-wrench btn btn-default" %>
+    <%=link_to '', edit_user_path(id: user.id), class:"col-xs-12 glyphicon glyphicon-wrench btn btn-default" %>
     <%# end %>
 </div>
 

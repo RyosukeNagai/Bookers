@@ -1,37 +1,38 @@
 
-<div class="home">
+<div class="container">
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-xs-3">
 <h1>User info</h1>
-<%= render 'users/information', user: @book.user %>
+<%= render 'users/information', user: @user %>
 
 <h1>New book</h1>
 <%= render 'books/newbook', book: @book_new %>
 </div>
 
-<div class="col-lg-7">
+<div class="col-xs-9">
 <h1>Book detail</h1>
 <table class="table table-hover table-inverse">
-<thead>
-	<tr>
-	  <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th colspan="5"></th>
-    </tr>
+<tbody>
+	
     <tr>
-      <td></td>
-      <td><%= @book.title %> </td>
-      <td><%= @book.body %> </td>
-    </tr>
+      <td><%= link_to (@bookdetail.user) do %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", class: "image" %>
+      <%= @bookdetail.user.name %>
+      <% end %>
+    </td>
+      <td><%= link_to @bookdetail.title,@bookdetail %> </td>
+      <td><%= @bookdetail.body %> </td>
 
-</thead>
-</div>
+
+<% if @bookdetail.user == current_user %>
+<td><%= link_to 'Edit',edit_book_path, class:"btn-sm btn-success" %></td>
+<td><%= link_to 'Destroy',@bookdetail, method: :delete,date:{confirm: "本当に消しますか？"}, class: "btn-sm btn-danger" %></td>
+<% end %>
+</tr>
+</tbody>
 </table>
-
-<tr><%= link_to 'Edit',edit_book_path, class:"btn-sm btn-success" %></tr>
-<tr><%= link_to 'Destroy',book_path(@book), method: :delete, class: "btn-sm btn-danger" %></tr>
-
+</div>
+</div>
+</div>
 
 
